@@ -1,0 +1,13 @@
+# Full reference: https://docs.airplane.dev/tasks/task-definition
+
+# Used by Airplane to identify your task. Do not change.
+slug: classify_tweets
+name: classify_tweets
+node:
+  entrypoint: classify_tweets.js
+  nodeVersion: "18"
+
+schedules:
+  daily:
+    cron: "0 * * * *"
+    description: Runs every hour

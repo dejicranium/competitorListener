@@ -1,0 +1,49 @@
+# Full reference: https://docs.airplane.dev/tasks/task-definition
+
+# Used by Airplane to identify your task. Do not change.
+slug: filter_mentions
+
+# A human-readable name for your task.
+name: filter_mentions
+parameters:
+  - name: competitor
+    slug: competitor
+    type: longtext
+    required: true
+  - name: classification
+    slug: classification
+    type: longtext
+    required: true
+node:
+  # The path to the .ts or .js file containing the logic for this task. This
+  # can be absolute or relative to the location of the definition file.
+  entrypoint: filter_mentions.js
+
+  # The version of Node to use. Valid values: 14, 16, 18.
+  nodeVersion: "18"
+
+  # A map of environment variables to use when running the task. The value
+  # should be an object; if specifying raw values, the value must be an object
+  # with `value` mapped to the value of the environment variable; if
+  # using config variables, the value must be an object with `config`
+  # mapped to the name of the config variable.
+  # envVars:
+  #   ENV_VAR_FROM_CONFIG:
+  #     config: database_url
+  #   ENV_VAR_FROM_VALUE:
+  #     value: env_var_value
+# Set label constraints to restrict this task to run only on agents with
+# matching labels.
+# constraints:
+#   aws-region: us-west-2
+
+# Set to true to disable direct execution of this task. Default: false.
+# requireRequests: true
+
+# Set to false to disallow requesters from approving their own requests for
+# this task. Default: true.
+# allowSelfApprovals: false
+
+# The maximum number of seconds the task should take before being timed out.
+# Default: 3600.
+# timeout: 1800
